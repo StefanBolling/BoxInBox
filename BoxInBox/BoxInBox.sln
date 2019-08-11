@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29201.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoxInBox", "BoxInBox\BoxInBox.csproj", "{2857BD3B-DD02-40DB-8DA9-585C5A62BE71}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2857BD3B-DD02-40DB-8DA9-585C5A62BE71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2857BD3B-DD02-40DB-8DA9-585C5A62BE71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2857BD3B-DD02-40DB-8DA9-585C5A62BE71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2857BD3B-DD02-40DB-8DA9-585C5A62BE71}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {68E7F2D1-5D87-4E01-B751-EFA0BD699085}
+	EndGlobalSection
+EndGlobal
