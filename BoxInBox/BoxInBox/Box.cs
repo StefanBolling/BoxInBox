@@ -3,7 +3,7 @@
     public class Box : IBox
     {
         public Box ContainedBox { get; set; }
-        private int NumberOfContainingBoxes = 0;
+        private int _numberOfContainingBoxes = 0;
 
         public int GetNumberOfContaintingBoxes
         {
@@ -11,7 +11,7 @@
             {
                 SetNumberOfContaintingBoxes(this);
 
-                return NumberOfContainingBoxes;
+                return _numberOfContainingBoxes;
             }
         }
 
@@ -19,7 +19,7 @@
         {
             if (box.ContainedBox != null)
             {
-                NumberOfContainingBoxes++;
+                _numberOfContainingBoxes++;
                 SetNumberOfContaintingBoxes(box.ContainedBox);
             }
         }
