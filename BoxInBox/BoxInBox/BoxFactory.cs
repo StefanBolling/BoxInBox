@@ -7,14 +7,14 @@ namespace BoxInBox
         private Box _boxForDelivery = new Box();
         private int _totalNumberOfBoxes = 0;
 
-        public Box CreateBoxWithContainingBoxes(int totalNumberOfBoxes)
+        public Box CreateBoxWithContainingBoxes(int numberOfContainingBoxes)
         {
             ResetBoxFactory();
-            if (totalNumberOfBoxes == 0) throw new ArgumentOutOfRangeException("Can't return 0 boxes.");
+            if (numberOfContainingBoxes == 0) throw new ArgumentOutOfRangeException("Can't return 0 boxes.");
 
-            if (totalNumberOfBoxes == 1) return new Box() { ContainedBox = new Box() };
+            if (numberOfContainingBoxes == 1) return new Box() { ContainedBox = new Box() };
 
-            _totalNumberOfBoxes = totalNumberOfBoxes - 1;
+            _totalNumberOfBoxes = numberOfContainingBoxes - 1;
             AddBox(_boxForDelivery);
 
             return _boxForDelivery;
