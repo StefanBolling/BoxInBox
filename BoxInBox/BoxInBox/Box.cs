@@ -3,6 +3,7 @@
     public class Box : IBox
     {
         public Box ContainedBox { get; set; }
+
         private int _numberOfContainingBoxes = 0;
 
         public int GetNumberOfContaintingBoxes
