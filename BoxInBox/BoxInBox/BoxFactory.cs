@@ -11,7 +11,6 @@ namespace BoxInBox
         {
             ResetBoxFactory();
             if (numberOfContainingBoxes == 0) throw new ArgumentOutOfRangeException("Can't return 0 boxes.");
-
             if (numberOfContainingBoxes == 1) return new Box() { ContainedBox = new Box() };
 
             _totalNumberOfBoxes = numberOfContainingBoxes - 1;

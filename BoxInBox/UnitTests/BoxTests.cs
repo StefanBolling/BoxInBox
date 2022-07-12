@@ -27,13 +27,13 @@ namespace Tests
         public void BoxWithFourBoxShouldSayItContainsFourBoxes()
         {
             // Arrange
-            var boxWithOneContainedBox = new Box { ContainedBox = new Box() };
-            var boxWithTwocontainingBoxes = new Box() { ContainedBox = boxWithOneContainedBox };
-            var boxWithThreeContainingBoxes = new Box() { ContainedBox = boxWithTwocontainingBoxes };
-            var boxWithFourContainingBoxes = new Box() { ContainedBox = boxWithThreeContainingBoxes };
+            var boxWithOneBox = new Box { ContainedBox = new Box() };
+            var boxWithTwoBoxes = new Box() { ContainedBox = boxWithOneBox };
+            var boxWithThreeBoxes = new Box() { ContainedBox = boxWithTwoBoxes };
+            var boxWithFourBoxes = new Box() { ContainedBox = boxWithThreeBoxes };
 
             // Act
-            var numberOfContainingBoxes = boxWithFourContainingBoxes.GetNumberOfContaintingBoxes;
+            var numberOfContainingBoxes = boxWithFourBoxes.GetNumberOfContaintingBoxes;
 
             // Assert
             Assert.AreEqual(4, numberOfContainingBoxes);
