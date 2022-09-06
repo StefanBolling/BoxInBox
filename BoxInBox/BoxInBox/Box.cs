@@ -1,28 +1,27 @@
-﻿namespace BoxInBox
+﻿namespace BoxInBox;
+
+public class Box : IBox
 {
-    public class Box : IBox
+    public Box ContainedBox { get; set; }
+
+    private int _numberOfContainingBoxes = 0;
+
+    public int GetNumberOfContainingBoxes
     {
-        public Box ContainedBox { get; set; }
-
-        private int _numberOfContainingBoxes = 0;
-
-        public int GetNumberOfContaintingBoxes
+        get
         {
-            get
-            {
-                SetNumberOfContaintingBoxes(this);
+            SetNumberOfContainingBoxes(this);
 
-                return _numberOfContainingBoxes;
-            }
+            return _numberOfContainingBoxes;
         }
+    }
 
-        private void SetNumberOfContaintingBoxes(Box box)
+    private void SetNumberOfContainingBoxes(IBox box)
+    {
+        if (box.ContainedBox != null)
         {
-            if (box.ContainedBox != null)
-            {
-                _numberOfContainingBoxes++;
-                SetNumberOfContaintingBoxes(box.ContainedBox);
-            }
+            _numberOfContainingBoxes++;
+            SetNumberOfContainingBoxes(box.ContainedBox);
         }
     }
 }
