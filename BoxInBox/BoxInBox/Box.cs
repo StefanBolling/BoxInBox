@@ -18,10 +18,9 @@ public class Box : IBox
 
     private void SetNumberOfContainingBoxes(IBox box)
     {
-        if (box.ContainedBox != null)
-        {
-            _numberOfContainingBoxes++;
-            SetNumberOfContainingBoxes(box.ContainedBox);
-        }
+        if (box.ContainedBox is null) return;
+
+        _numberOfContainingBoxes++;
+        SetNumberOfContainingBoxes(box.ContainedBox);
     }
 }
