@@ -20,7 +20,7 @@ public class Tests
         var numberOfContainingBoxes = boxWithOneContainedBox.GetNumberOfContainingBoxes;
 
         // Assert
-        Assert.AreEqual(1, numberOfContainingBoxes);
+        Assert.That(numberOfContainingBoxes, Is.EqualTo(1));
     }
 
     [Test]
@@ -36,6 +36,39 @@ public class Tests
         var numberOfContainingBoxes = boxWithFourBoxes.GetNumberOfContainingBoxes;
 
         // Assert
-        Assert.AreEqual(4, numberOfContainingBoxes);
+        Assert.That(numberOfContainingBoxes, Is.EqualTo(4));
+    }
+
+    [Test]
+    public void EmptyBoxShouldContainNoBoxes()
+    {
+        // Arrange
+        var emptyBox = new Box();
+
+        // Act
+        var numberOfContainingBoxes = emptyBox.GetNumberOfContainingBoxes;
+
+        // Assert
+        Assert.That(numberOfContainingBoxes, Is.EqualTo(0));
+    }
+
+    [Test]
+    public void GetNumberOfContainingBoxesShouldBeStableAcrossRepeatedReads()
+    {
+        // Arrange
+        var boxWithTwoContainedBoxes = new Box { ContainedBox = new Box { ContainedBox = new Box() } };
+
+        // Act
+        var firstRead = boxWithTwoContainedBoxes.GetNumberOfContainingBoxes;
+        var secondRead = boxWithTwoContainedBoxes.GetNumberOfContainingBoxes;
+        var thirdRead = boxWithTwoContainedBoxes.GetNumberOfContainingBoxes;
+
+        // Assert
+        Assert.Multiple(() =>
+        {
+            Assert.That(firstRead, Is.EqualTo(2));
+            Assert.That(secondRead, Is.EqualTo(2));
+            Assert.That(thirdRead, Is.EqualTo(2));
+        });
     }
 }

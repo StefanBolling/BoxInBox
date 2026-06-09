@@ -12,7 +12,7 @@ internal class Program
         var boxWithSixBoxes = BoxFactory.CreateBoxWithContainingBoxes(6);
         var boxWithTwoBoxes = BoxFactory.CreateBoxWithContainingBoxes(11);
 
-        Console.WriteLine($"Box with one containing boxes contains { boxWithOneBox.GetNumberOfContainingBoxes } boxes");
+        Console.WriteLine($"Box with one containing box contains { boxWithOneBox.GetNumberOfContainingBoxes } boxes");
         Console.WriteLine($"Box with six containing boxes contains { boxWithSixBoxes.GetNumberOfContainingBoxes } boxes");
         Console.WriteLine($"Box with eleven containing boxes contains { boxWithTwoBoxes.GetNumberOfContainingBoxes } boxes");
 
